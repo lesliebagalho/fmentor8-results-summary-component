@@ -4,22 +4,31 @@
 - Weights: 500, 700, 800 */
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-/* ## Colors
+:root {
+    /* ## Colors
 ### Primary */
-    --light-red: hsl(0, 100%, 67%);
-    --orangey-yellow: hsl(39, 100%, 56%);
-    --green-teal: hsl(166, 100%, 37%);
-    --cobalt-blue: hsl(234, 85%, 45%);
+    --color-light-red: hsl(0, 100%, 67%);
+    --color-orangey-yellow: hsl(39, 100%, 56%);
+    --color-green-teal: hsl(166, 100%, 37%);
+    --color-cobalt-blue: hsl(234, 85%, 45%);
 
-/* ## Gradients */
-    --light-slate-blue: hsl(252, 100%, 67%); /* (background) */
-    --light-royal-blue: hsl(241, 81%, 54%); /* (background) */
+    --light-red: hsl(0, 100%, 67%, 0.08);
+    --orangey-yellow: hsl(39, 100%, 56%, 0.08);
+    --green-teal: hsl(166, 100%, 37%, 0.08);
+    --cobalt-blue: hsl(234, 85%, 45%, 0.08);
 
-    --violet-blue: hsla(256, 72%, 46%, 1); /* (circle) */
-    --persian-blue: hsla(241, 72%, 46%, 0); /* (circle) */
+    /* ## Gradients */
+    --light-slate-blue: hsl(252, 100%, 67%);
+    /* (background) */
+    --light-royal-blue: hsl(241, 81%, 54%);
+    /* (background) */
 
-/* ### Neutral */
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    /* (circle) */
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    /* (circle) */
+
+    /* ### Neutral */
     --white: hsl(0, 0%, 100%);
     --pale-blue: hsl(221, 100%, 96%);
     --light-lavender: hsl(241, 100%, 89%);
@@ -30,3 +39,209 @@
 ### Body Copy
 - Font size (paragraphs): 18px */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+    background: var(--pale-blue);
+}
+
+.container {
+    width: 375px;
+    margin: auto;
+    background: var(--white);
+    /* height: 812px; */
+}
+
+.left {
+    background: linear-gradient(180deg, var(--light-slate-blue) 0%, var(--light-royal-blue) 100%);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 25px 35px 35px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+        font-weight: normal;
+        color: var(--light-lavender);
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .circle,
+    .left-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circle {
+        width: 140px;
+        height: 140px;
+        border-radius: 100%;
+        background: linear-gradient(180deg, var(--violet-blue) 0%, var(--persian-blue) 100%);
+        margin: 25px 0;
+        justify-content: center;
+
+        h1 {
+            color: var(--white);
+            font-size: 50px;
+        }
+
+        p {
+            color: var(--light-lavender);
+            font-size: 16px;
+        }
+    }
+}
+
+.left-content {
+    h2 {
+        color: var(--white);
+        font-size: 22px;
+    }
+
+    p {
+        color: var(--light-lavender);
+        font-size: 15px;
+        margin: 15px 0;
+        width: 260px;
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 30px;
+    gap: 16px;
+
+    h3 {
+        color: var(--dark-gray-blue);
+        margin-bottom: 10px;
+    }
+
+    .card-1 {
+        background: var(--light-red);
+
+        h4 {
+            color: var(--color-light-red);
+        }
+    }
+
+    .card-2 {
+        background: var(--orangey-yellow);
+
+        h4 {
+            color: var(--color-orangey-yellow);
+        }
+    }
+
+    .card-3 {
+        background: var(--green-teal);
+
+        h4 {
+            color: var(--color-green-teal);
+        }
+    }
+
+    .card-4 {
+        background: var(--cobalt-blue);
+
+        h4 {
+            color: var(--color-cobalt-blue);
+        }
+    }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem;
+        border-radius: 12px;
+
+        .strong {
+            color: var(--dark-gray-blue);
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--light-lavender);
+            font-weight: 700;
+        }
+
+        .card-left {
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    a:hover {
+        color: var(--color-orangey-yellow);
+    }
+
+    .button {
+        text-align: center;
+        padding: 1rem;
+        background: var(--dark-gray-blue);
+        margin-top: 10px;
+        color: var(--white);
+        border-radius: 50px;
+        cursor: pointer;
+
+
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 700px;
+        display: flex;
+        margin-top: 100px;
+
+        .left {
+            width: 50%;
+            border-radius: 25px;
+
+            h3 {
+                font-size: 28px;
+            }
+
+            .circle {
+                margin-top: 35px;
+            }
+
+            .left-content {
+                h2 {
+                    font-size: 25px;
+                    margin: 15px 0;
+                }
+
+                p {
+                    width: 210px;
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+
+            h3 {
+                font-size: 28px;
+            }
+        }
+    }
+}
